@@ -45,6 +45,19 @@ namespace ListaEnlazada
             }
         }
 
+        public bool buscar(Func<T, T, bool> fIgualdad, 
+                                    T elementoABuscar){
+            actual = primero;
+            while( actual != null )
+            {
+                if( fIgualdad(actual.dato,elementoABuscar) ){
+                    return true;
+                }
+                actual = actual.siguiente;
+            }
+            return false;
+        }
+
 
     }
 }
